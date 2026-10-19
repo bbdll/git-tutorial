@@ -26,9 +26,23 @@ def list_tasks():
         print(f"{number}. [{mark}] {task['title']}")
 
 
+def complete_task(number):
+    """Mark the task with the given number as done."""
+    tasks = load_tasks()
+
+    if number < 1 or number > len(tasks):
+        print(f"There is no task number {number}.")
+        return
+
+    task = tasks[number - 1]
+    task["done"] = True
+    save_tasks(tasks)
+    print(f"Completed: {task['title']}")
+
+
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python tasks.py [add|list] ...")
+        print("Usage: python tasks.py [add|list|done] ...")
         return
 
     command = sys.argv[1]
@@ -37,6 +51,8 @@ def main():
         add_task(" ".join(sys.argv[2:]))
     elif command == "list":
         list_tasks()
+    elif command == "done":
+        complete_task(int(sys.argv[2]))
     else:
         print(f"Unknown command: {command}")
 

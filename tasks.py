@@ -49,7 +49,13 @@ def main():
     command = sys.argv[1]
 
     if command == "add":
-        add_task(" ".join(sys.argv[2:]))
+        args = sys.argv[2:]
+
+        # A trailing "high" or "low" sets the priority, e.g. add "Call bank" high
+        if len(args) > 1 and args[-1] in ("high", "low"):
+            add_task(" ".join(args[:-1]), args[-1])
+        else:
+            add_task(" ".join(args))
     elif command == "list":
         list_tasks()
     elif command == "done":

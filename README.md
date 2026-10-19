@@ -16,11 +16,14 @@ Learn the core Git workflow by building something real:
 ## Usage
 
 ```sh
-python3 tasks.py add "Buy milk"   # add a task
-python3 tasks.py list             # show all tasks
-python3 tasks.py done 1           # mark task 1 as completed
+python3 tasks.py add "Buy milk"          # add a task
+python3 tasks.py add "Call the bank" high # add a high priority task
+python3 tasks.py list                     # show all tasks
+python3 tasks.py done 1                   # mark task 1 as completed
 ```
+
+Priority can be `high`, `low`, or left out for `normal`.
 
 ## Status
 
-Early work in progress.
+Version 1.0 — add, list, done and priorities all work.

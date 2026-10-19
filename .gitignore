@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local task data
+tasks.json
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

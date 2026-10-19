@@ -5,10 +5,10 @@ import sys
 from storage import load_tasks, save_tasks
 
 
-def add_task(title):
+def add_task(title, priority="normal"):
     """Add a new task to the list."""
     tasks = load_tasks()
-    tasks.append({"title": title, "done": False})
+    tasks.append({"title": title, "done": False, "priority": priority})
     save_tasks(tasks)
     print(f"Added: {title}")
 
@@ -23,7 +23,8 @@ def list_tasks():
 
     for number, task in enumerate(tasks, start=1):
         mark = "x" if task["done"] else " "
-        print(f"{number}. [{mark}] {task['title']}")
+        priority = task.get("priority", "normal")
+        print(f"{number}. [{mark}] ({priority}) {task['title']}")
 
 
 def complete_task(number):

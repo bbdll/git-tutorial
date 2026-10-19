@@ -13,6 +13,14 @@ Learn the core Git workflow by building something real:
 - tagging a release
 - reverting a change that turned out to be a bad idea
 
+## Usage
+
+```sh
+python3 tasks.py add "Buy milk"   # add a task
+python3 tasks.py list             # show all tasks
+python3 tasks.py done 1           # mark task 1 as completed
+```
+
 ## Status
 
 Early work in progress.

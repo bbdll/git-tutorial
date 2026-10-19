@@ -22,8 +22,8 @@ def list_tasks():
         return
 
     for number, task in enumerate(tasks, start=1):
-        mark = "x" if task["done"] else " "
-        print(f"{number}. [{mark}] {task['title']}")
+        mark = "DONE" if task["done"] else "TODO"
+        print(f"{number}. {mark} - {task['title']}")
 
 
 def complete_task(number):

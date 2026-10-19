@@ -31,10 +31,6 @@ def complete_task(number):
     """Mark the task with the given number as done."""
     tasks = load_tasks()
 
-    if number < 1 or number > len(tasks):
-        print(f"There is no task number {number}.")
-        return
-
     task = tasks[number - 1]
     task["done"] = True
     save_tasks(tasks)
